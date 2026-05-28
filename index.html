@@ -57,26 +57,26 @@
     =================================================== */
     .display-1 {
       font-family: 'Prompt', sans-serif;
-      font-size: clamp(40px, 6vw, 72px);
+      font-size: clamp(26px, 4vw, 48px);
       font-weight: 900;
       line-height: 1.08;
       letter-spacing: -0.025em;
     }
     .display-2 {
       font-family: 'Prompt', sans-serif;
-      font-size: clamp(28px, 4vw, 48px);
+      font-size: clamp(22px, 3vw, 38px);
       font-weight: 800;
       line-height: 1.15;
     }
     .display-3 {
       font-family: 'Prompt', sans-serif;
-      font-size: clamp(20px, 2.5vw, 30px);
+      font-size: clamp(18px, 2.2vw, 28px);
       font-weight: 700;
       line-height: 1.3;
     }
     .body-lg {
       font-family: 'IBM Plex Sans Thai', sans-serif;
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.75;
       color: var(--ink2);
     }
@@ -380,7 +380,7 @@
     .hero-text { max-width: 760px; width: 100%; }
     .hero-h1 {
       font-family: 'Prompt', sans-serif;
-      font-size: clamp(28px, 5.5vw, 64px);
+      font-size: clamp(28px, 4.5vw, 58px);
       font-weight: 900;
       line-height: 1.1;
       letter-spacing: -0.025em;
@@ -1353,6 +1353,54 @@
       .how-step-num { font-size: 24px; }
       .how-closing p { font-size: 20px; }
     }
+
+    /* ===================================================
+       04.8 · FEATURES — SECOND BRAIN มีอะไรบ้าง
+    =================================================== */
+    #features { background: var(--bg); border-top: 1px solid var(--line); }
+    .feat-list {
+      display: flex; flex-direction: column; gap: 16px; margin-top: 48px;
+    }
+    .feat-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 40px; align-items: center;
+      background: white; border: 1px solid var(--line);
+      border-radius: 16px; padding: 28px 32px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .feat-row:hover { border-color: var(--b200); box-shadow: var(--sh-card); }
+    .feat-img {
+      aspect-ratio: 16/9; background: var(--bg2);
+      border-radius: 10px; border: 1px solid var(--line);
+      overflow: hidden; display: flex;
+      align-items: center; justify-content: center;
+      flex-direction: column; gap: 10px;
+    }
+    .feat-img-emoji { font-size: 28px; }
+    .feat-img-label {
+      font-family: 'Manrope', sans-serif; font-size: 12px;
+      font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--muted);
+    }
+    .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .feat-tag {
+      font-family: 'Manrope', sans-serif; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--b500); margin-bottom: 10px;
+    }
+    .feat-title {
+      font-family: 'Prompt', sans-serif;
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 700; color: var(--ink);
+      margin-bottom: 10px; line-height: 1.3;
+    }
+    .feat-desc {
+      font-family: 'IBM Plex Sans Thai', sans-serif;
+      font-size: 15px; color: var(--ink2); line-height: 1.75;
+    }
+    @media (max-width: 768px) {
+      .feat-row { grid-template-columns: 1fr; gap: 18px; padding: 22px; }
+    }
   </style>
 </head>
 <body>
@@ -1410,13 +1458,12 @@
       <div class="hero-text">
         <div class="badge-pill">✦ Pre-order เปิดแล้ว — เฉพาะช่วงแรกเท่านั้น</div>
         <h1 class="hero-h1">
-          เปลี่ยนคนที่มี <span class="highlight-strong">ความรู้ท่วมหัว</span><br>
-          สู่ คนที่<span class="highlight">สร้างผลลัพธ์จริง</span><br>
-          จาก ความรู้ที่มี ภายใน 30 วัน
+          ระบบเดียวจบ <span class="highlight-strong">จัดระเบียบชีวิต</span><br>
+          สำหรับ<span class="highlight">สายพัฒนาตัวเอง</span>
         </h1>
         <p class="hero-sub">
-          หนังสือที่อ่าน — คอร์สที่เรียน — ไอเดียที่คิด<br>
-          Second Brain จะเปลี่ยนความรู้ทั้งหมดเป็น<strong>โปรเจกต์ที่สร้างผลลัพธ์</strong>ให้กับชีวิต
+          บทความที่อ่าน — คอร์สที่เรียน — ไอเดียที่คิด<br>
+          Second Brain จะจัดระเบียบทุกอย่าง จนคุณ<strong>เหลือสมองไว้เรียนรู้สิ่งใหม่ๆ</strong>
         </p>
         <div class="hero-cta-row">
           <a href="#pricing" class="btn btn-primary btn-lg">Pre-order ฿990 →</a>
@@ -1632,6 +1679,115 @@
       แต่ทำให้คุณเปลี่ยน <strong>"สิ่งที่รู้"</strong> เป็น <strong>"สิ่งที่ทำได้"</strong></p>
     </div>
 
+  </div>
+</section>
+
+<!-- ================================================================
+     04.8 · FEATURES — SECOND BRAIN มีอะไรบ้าง
+================================================================ -->
+<section id="features">
+  <div class="container">
+    <h2 class="display-2">Second Brain <span class="highlight">มีอะไรบ้าง?</span></h2>
+
+    <div class="feat-list">
+
+      <!-- 01: Quick Actions -->
+      <div class="feat-row reveal">
+        <div class="feat-img">
+          <img src="Quick action.png" alt="Quick Actions">
+        </div>
+        <div class="feat-body">
+          <div class="feat-tag">01 · Quick Actions</div>
+          <h3 class="feat-title">ทำงานเร็วขึ้นโดยไม่เสียจังหวะ</h3>
+          <p class="feat-desc">Add Note, Task หรือ Project ได้ใน 2 วินาที โดยไม่เสียเวลา</p>
+        </div>
+      </div>
+
+      <!-- 02: Inbox -->
+      <div class="feat-row reveal">
+        <div class="feat-img">
+          <img src="Inbox.png" alt="Inbox">
+        </div>
+        <div class="feat-body">
+          <div class="feat-tag">02 · Inbox</div>
+          <h3 class="feat-title">จดทุกอย่างที่ผ่านสมอง โดยไม่กลัวหาย</h3>
+          <p class="feat-desc">โยนไอเดีย ลิงก์ บทความ หรือความคิดที่ผุดขึ้นมากลางดึก ลง Inbox ก่อน แล้วค่อยจัดทีหลัง ไม่มีอะไรตกหล่นอีกต่อไป</p>
+        </div>
+      </div>
+
+      <!-- 03: Task Management -->
+      <div class="feat-row reveal">
+        <div class="feat-img">
+          <img src="Task.png" alt="Task Management">
+        </div>
+        <div class="feat-body">
+          <div class="feat-tag">03 · Task Management</div>
+          <h3 class="feat-title">รู้ว่าตอนนี้กำลังทำอะไรอยู่</h3>
+          <p class="feat-desc">ดู Task ทั้งหมดในหน้าเดียว เห็นทันทีว่าอะไรด่วน อะไรรอก่อนได้ และอะไรเสร็จแล้ว</p>
+        </div>
+      </div>
+
+      <!-- 04: Note System -->
+      <div class="feat-row reveal">
+        <div class="feat-img">
+          <img src="Notes.png" alt="Note System">
+        </div>
+        <div class="feat-body">
+          <div class="feat-tag">04 · Note System</div>
+          <h3 class="feat-title">เชื่อมโน้ตเข้ากับงานที่ทำ</h3>
+          <p class="feat-desc">Note ที่จดมาเชื่อมตรงกับ Project ที่กำลังทำ ไม่ต้องค้นหาซ้ำ ความรู้อยู่ถูกที่ถูกเวลา</p>
+        </div>
+      </div>
+
+      <!-- 05: Project Tracking -->
+      <div class="feat-row reveal">
+        <div class="feat-img">
+          <img src="Project.png" alt="Project Tracking">
+        </div>
+        <div class="feat-body">
+          <div class="feat-tag">05 · Project Tracking</div>
+          <h3 class="feat-title">ติดตามโปรเจกต์ตั้งแต่เป็นไอเดียจนสำเร็จ</h3>
+          <p class="feat-desc">วางแผน Project ตั้งแต่ต้นจนเสร็จ พร้อมด้วย Note / Resource ที่เกี่ยวข้อง อยู่ในที่เดียว</p>
+        </div>
+      </div>
+
+      <!-- 06: Area Management -->
+      <div class="feat-row reveal">
+        <div class="feat-img">
+          <img src="Area.png" alt="Area Management">
+        </div>
+        <div class="feat-body">
+          <div class="feat-tag">06 · Area Management</div>
+          <h3 class="feat-title">จัดการชีวิตทุกด้านโดยไม่สับสน</h3>
+          <p class="feat-desc">แยก Area ชัดเจน ไม่ว่าจะเป็นงาน การเงิน สุขภาพ หรือการเรียนรู้ รู้เสมอว่าแต่ละด้านของชีวิตอยู่จุดไหน</p>
+        </div>
+      </div>
+
+      <!-- 07: Resource Library -->
+      <div class="feat-row reveal">
+        <div class="feat-img">
+          <img src="Resource.png" alt="Resource Library">
+        </div>
+        <div class="feat-body">
+          <div class="feat-tag">07 · Resource Library</div>
+          <h3 class="feat-title">เก็บความรู้อย่างเป็นระบบ</h3>
+          <p class="feat-desc">บทความ หนังสือ เว็บไซต์ ไฟล์ต่างๆ เก็บไว้ในที่เดียว ค้นเจอทุกครั้งที่ต้องการ ไม่หายไปกับ Browser History</p>
+        </div>
+      </div>
+
+      <!-- 08: Archive -->
+      <div class="feat-row reveal">
+        <div class="feat-img">
+          <img src="Archive.png" alt="Archive">
+        </div>
+        <div class="feat-body">
+          <div class="feat-tag">08 · Archive</div>
+          <h3 class="feat-title">เก็บสิ่งที่เสร็จ เริ่มต้นสิ่งใหม่ได้ชัดเจนขึ้น</h3>
+          <p class="feat-desc">เก็บทุกอย่างที่เสร็จแล้ว ออกจากสายตา พื้นที่ทำงานสะอาด สามารถโฟกัสกับสิ่งที่สำคัญในตอนนี้</p>
+        </div>
+      </div>
+
+    </div><!-- /.feat-list -->
   </div>
 </section>
 
